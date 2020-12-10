@@ -10,6 +10,7 @@
     "build": "webpack-cli --env true",
     "start": "node ./server/server_development.js",
     "production": "node ./server/server_production.js",
+    "update": "git pull; npm run build; pm2 restart server_production",
     "lint": "eslint .",
     "docs": "docsify serve docs",
     "test": "mocha"
@@ -26,7 +27,6 @@
     "chartist": "^0.11.0",
     "csv-generate": "^3.2.0",
     "date-fns": "^2.0.0-alpha.25",
-    "drivelist": "^6.4.6",
     "express": "^4.16.4",
     "fs-extra": "^7.0.1",
     "hash-source": "^1.0.1",
@@ -38,14 +38,12 @@
     "react-loadable": "^5.5.0",
     "require-reload": "^0.2.2",
     "socket.io": "^2.2.0",
-    "socket.io-client": "^2.2.0",
-    "xlsx": "^0.14.1"
+    "socket.io-client": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "autoprefixer": "^9.4.5",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
@@ -68,6 +66,7 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "workbox-webpack-plugin": "^5.0.0"
   }
 }
